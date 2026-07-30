@@ -1,0 +1,56 @@
+---
+title: "Troubleshooting"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Troubleshooting}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Troubleshooting
+
+Most setup problems come from Docker not running, the image not being downloaded yet, or port 3838 already being used by another container.
+
+## Docker Desktop Is Not Running
+
+Open Docker Desktop and wait for the status indicator to show that Docker is running. On Windows, Docker may ask to finish WSL 2 setup or restart the computer.
+
+## MicroHub Image Cannot Be Found
+
+Docker Desktop search may not find GitHub Container Registry images. Pull the image manually first:
+
+```bash
+docker pull ghcr.io/sjfox/microhub:latest
+```
+
+After the pull finishes, return to Docker Desktop and check the **Images** tab.
+
+## Port 3838 Is Already in Use
+
+Stop any other running MicroHub or Shiny containers in Docker Desktop. Then start MicroHub again with host port `3838` and container port `3838`.
+
+<div class="microhub-callout">
+If a different host port is required, use that number in the browser URL. For example, host port `3839` means opening `http://localhost:3839`.
+</div>
+
+## The Browser Says the App Cannot Be Reached
+
+1. Confirm the MicroHub container is running in Docker Desktop.
+2. Confirm the host and container ports are both set to `3838`.
+3. Open <http://localhost:3838>, not a public website URL.
+4. If the container stopped, open its logs in Docker Desktop and share the first visible error with a facilitator.
+
+## CSV Upload Fails
+
+Check that the file has exactly the required columns and no extra header rows above the column names.
+
+| Required column | Example |
+|---|---|
+| `date` | `2026-05-16` or `5/16/26` |
+| `target_group` | `Overall` |
+| `value` | `42` |
+
+## A Model Run Is Slow
+
+Some models take longer than the baselines, especially on laptops with limited memory or CPU. During workshop exercises, start with baseline models and Copycat before running heavier models. Close unused applications if the computer is under memory pressure.
+

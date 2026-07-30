@@ -1,0 +1,126 @@
+
+<!-- README.md is generated from README.Rmd. Edit README.Rmd, then run rmarkdown::render("README.Rmd"). -->
+
+# MicroHub India Workshop
+
+<div class="microhub-hero">
+
+<div>
+
+<p class="microhub-lead">
+
+Install MicroHub with Docker Desktop, work through guided outbreak
+forecasting exercises, compare model behavior, and export hub-ready
+probabilistic forecasts.
+</p>
+
+<p>
+
+<a class="microhub-button" href="articles/install.html">Start setup</a>
+<a class="microhub-button secondary" href="articles/downloads.html">Get
+data</a>
+</p>
+
+</div>
+
+<div class="microhub-image">
+
+<img src="man/figures/microhub-home.png" alt="MicroHub application home page screenshot">
+
+</div>
+
+</div>
+
+## Workshop Flow
+
+<div class="microhub-grid">
+
+<div class="microhub-card">
+
+<span class="microhub-tag">Day 1</span>
+<h3>
+
+Install, orient, upload
+</h3>
+
+<p>
+
+Confirm Docker Desktop works, open MicroHub locally, inspect the
+required surveillance data format, and produce first visual checks.
+</p>
+
+</div>
+
+<div class="microhub-card">
+
+<span class="microhub-tag">Day 2</span>
+<h3>
+
+Generate forecasts
+</h3>
+
+<p>
+
+Run baseline models, tune real-time settings, compare Copycat and
+INFLAenza, and interpret uncertainty intervals.
+</p>
+
+</div>
+
+<div class="microhub-card">
+
+<span class="microhub-tag">Day 3</span>
+<h3>
+
+Evaluate and export
+</h3>
+
+<p>
+
+Build an ensemble, download hub-ready outputs, discuss retrospective
+evaluation, and plan adaptation to local surveillance data.
+</p>
+
+</div>
+
+</div>
+
+## What Participants Will Need
+
+- Windows, macOS, or Linux laptop with administrator rights for software
+  installation.
+- Docker Desktop installed before the first hands-on session.
+- Internet access for pulling the MicroHub container image and
+  downloading workshop CSV files.
+- Workshop datasets from the [Downloads](articles/downloads.html) page.
+
+## Learning Goals
+
+- Run MicroHub locally using Docker Desktop.
+- Prepare surveillance data with `date`, `target_group`, and `value`
+  columns.
+- Understand forecast date, data drop, seasonality, and horizon
+  settings.
+- Compare simple baselines with trajectory-matching and Bayesian models.
+- Create ensemble forecasts and export hub-compatible outputs.
+
+## Editing This Site
+
+This repository is a small pkgdown site. Edit the source files, then
+rebuild the site:
+
+``` r
+rmarkdown::render("README.Rmd")
+pkgdown::build_site()
+```
+
+Common edits:
+
+- Home page: `README.Rmd`
+- Install guide: `vignettes/install.Rmd`
+- Three-day agenda: `vignettes/schedule.Rmd`
+- Exercises: `vignettes/exercises.Rmd`
+- Downloads page: `vignettes/downloads.Rmd`
+- Troubleshooting: `vignettes/troubleshooting.Rmd`
+- Navigation and theme: `_pkgdown.yml`
+- Downloadable CSVs: `pkgdown/assets/downloads/`

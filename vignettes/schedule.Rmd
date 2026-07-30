@@ -1,0 +1,51 @@
+---
+title: "Schedule"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Schedule}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Three-Day Workshop Structure
+
+A practical sequence that moves from installation and data readiness to forecasting, ensemble construction, evaluation, and local implementation planning.
+
+<div class="microhub-schedule">
+<div class="microhub-day">
+<span class="microhub-tag">Day 1: Foundations</span>
+
+## MicroHub orientation and data preparation
+
+| Block | Topic | Hands-on output |
+|---|---|---|
+| Morning | Workshop goals, forecasting hub concepts, MicroHub tour | Participants can identify tabs, settings, and output locations. |
+| Late morning | Docker setup clinic | MicroHub opens locally at `localhost:3838`. |
+| Afternoon | Data format and quality checks | Exercise 1 completed with uploaded CSV and visual inspection notes. |
+</div>
+
+<div class="microhub-day">
+<span class="microhub-tag">Day 2: Models</span>
+
+## Forecast generation and interpretation
+
+| Block | Topic | Hands-on output |
+|---|---|---|
+| Morning | Baseline models and real-time forecast settings | Exercise 2 completed with baseline forecast plots. |
+| Late morning | Copycat model logic and parameter choices | Participants compare historical trajectory matching behavior. |
+| Afternoon | INFLAenza and model comparison | Exercise 3 completed with notes on median forecasts and intervals. |
+</div>
+
+<div class="microhub-day">
+<span class="microhub-tag">Day 3: Outputs</span>
+
+## Ensembling, downloads, retrospective evaluation
+
+| Block | Topic | Hands-on output |
+|---|---|---|
+| Morning | Model ensembling and hub-ready forecast files | Exercise 4 completed with combined forecast CSV. |
+| Late morning | Retrospective forecast runs and evaluation ideas | Participants understand how to test past reference weeks. |
+| Afternoon | Applying MicroHub to local surveillance workflows | Action plan for local datasets, target groups, reporting cadence, and next steps. |
+</div>
+</div>
+

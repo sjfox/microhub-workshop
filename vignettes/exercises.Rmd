@@ -1,0 +1,89 @@
+---
+title: "Exercises"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Exercises}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Four Guided MicroHub Exercises
+
+Each exercise is designed for small-group work with a short facilitator debrief. Participants should keep screenshots, notes, and downloaded CSV outputs as they go.
+
+## Exercise 1: Upload Surveillance Data and Read the Plot
+
+<span class="microhub-tag">Day 1</span>
+
+**Goal:** Load a MicroHub-compatible CSV and decide whether the most recent data are ready for real-time forecasting.
+
+**Data:** [bangladesh-preferred.csv](../downloads/bangladesh-preferred.csv)
+
+1. Open MicroHub at <http://localhost:3838>.
+2. Go to **Data Upload & Settings** and upload `bangladesh-preferred.csv`.
+3. Confirm the app recognizes the required columns: `date`, `target_group`, and `value`.
+4. Set the forecast date to the most recent available week in the dataset.
+5. Inspect the visualization for missing weeks, unusual spikes, and the apparent seasonal pattern.
+
+<div class="microhub-callout">
+<strong>Deliverable:</strong> Write down one reason you would use all recent data and one reason you might drop the most recent week.
+</div>
+
+## Exercise 2: Run Baseline Forecasts
+
+<span class="microhub-tag">Day 2</span>
+
+**Goal:** Establish a simple reference forecast before using more complex models.
+
+**Data:** Continue with [bangladesh-preferred.csv](../downloads/bangladesh-preferred.csv).
+
+1. In **Data Upload & Settings**, set forecast horizon to 4 weeks.
+2. Run the **Regular Baseline** model and save the plot.
+3. Run the **Optimal Baseline** model and compare the median forecast path.
+4. Run the **Seasonal Baseline** model if the dataset has enough seasonal history.
+5. Record which baseline seems most plausible for the current epidemic phase.
+
+<div class="microhub-callout">
+<strong>Key idea:</strong> Baseline models are transparent anchors for evaluating whether a complex model is adding useful information.
+</div>
+
+## Exercise 3: Compare Copycat and INFLAenza
+
+<span class="microhub-tag">Day 2</span>
+
+**Goal:** Compare a historical trajectory-matching model with a Bayesian time-series model.
+
+**Data:** Use [chile-target.csv](../downloads/chile-target.csv) for a second scenario.
+
+1. Upload `chile-target.csv` and keep a 4-week forecast horizon.
+2. Run **Copycat**. Note whether the forecast follows recent growth, decline, or a flatter path.
+3. Run **INFLAenza**. Compare the forecast median and uncertainty intervals to Copycat.
+4. Change **Data to Drop** from 0 to 1 and rerun one model.
+5. Discuss how reporting delays can change model interpretation in real time.
+
+<div class="microhub-image">
+<img src="../reference/figures/forecast-plot.png" alt="Example MicroHub forecast plot with uncertainty intervals">
+</div>
+
+## Exercise 4: Build an Ensemble and Export Hub-Ready Results
+
+<span class="microhub-tag">Day 3</span>
+
+**Goal:** Combine forecasts, inspect the output format, and prepare a file that could move into a forecasting hub workflow.
+
+1. Make sure at least two individual model forecasts have been generated.
+2. Open the **Ensemble** tab.
+3. Select the models to include and run the ensemble.
+4. Open the **Download** tab and preview the forecast table.
+5. Download the combined CSV and compare it to [example-forecast-output.csv](../downloads/example-forecast-output.csv).
+
+<div class="microhub-callout">
+<strong>Deliverable:</strong> Identify the columns needed by the hub submission format and one check you would run before sharing the file.
+</div>
+
+## Debrief Prompts
+
+- Which model was easiest to explain to a surveillance team?
+- Which assumptions felt most important for local use in India?
+- How should forecast date and data-drop settings be chosen during routine reporting?
+- What local metadata, target groups, or reporting cadence would need to be added before operational use?

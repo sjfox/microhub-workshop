@@ -1,0 +1,46 @@
+url: https://sjfox.github.io/microhub-workshop/
+
+template:
+  bootstrap: 5
+  bootswatch: flatly
+  bslib:
+    primary: "#126a68"
+
+home:
+  title: MicroHub India Workshop
+  description: Three-day hands-on workshop materials for MicroHub forecasting.
+  sidebar: false
+
+navbar:
+  structure:
+    left: [install, schedule, exercises, downloads, help]
+    right: [github]
+  components:
+    install:
+      text: Install
+      href: articles/install.html
+    schedule:
+      text: Schedule
+      href: articles/schedule.html
+    exercises:
+      text: Exercises
+      href: articles/exercises.html
+    downloads:
+      text: Downloads
+      href: articles/downloads.html
+    help:
+      text: Help
+      href: articles/troubleshooting.html
+
+articles:
+  - title: Workshop Materials
+    navbar: ~
+    contents:
+      - install
+      - schedule
+      - exercises
+      - downloads
+      - troubleshooting
+
+development:
+  mode: auto
