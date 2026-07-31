@@ -7,21 +7,21 @@ template:
     primary: "#126a68"
 
 home:
-  title: MicroHub India Workshop
-  description: Three-day hands-on workshop materials for MicroHub forecasting.
+  title: The MicroHub Workshop
+  description: Hands-on workshop materials for MicroHub forecasting.
   sidebar: false
 
 navbar:
   structure:
-    left: [install, schedule, exercises, downloads, help]
+    left: [overview, install, exercises, downloads, help, contact]
     right: [github]
   components:
+    overview:
+      text: Overview
+      href: articles/overview.html
     install:
       text: Install
       href: articles/install.html
-    schedule:
-      text: Schedule
-      href: articles/schedule.html
     exercises:
       text: Exercises
       href: articles/exercises.html
@@ -31,16 +31,20 @@ navbar:
     help:
       text: Help
       href: articles/troubleshooting.html
+    contact:
+      text: Contact
+      href: articles/contact.html
 
 articles:
   - title: Workshop Materials
     navbar: ~
     contents:
+      - overview
       - install
-      - schedule
       - exercises
       - downloads
       - troubleshooting
+      - contact
 
 development:
   mode: auto

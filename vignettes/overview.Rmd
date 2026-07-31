@@ -1,0 +1,75 @@
+---
+title: "Overview"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# MicroHub Overview
+
+MicroHub is a local infectious disease forecasting dashboard designed to help public health teams generate, compare, and export probabilistic forecasts without working directly in model source code. It is built as an R Shiny application and can be run locally with Docker Desktop.
+
+The tool supports a practical forecasting workflow:
+
+1. Upload surveillance data.
+2. Configure real-time forecast settings.
+3. Run one or more individual forecasting models.
+4. Compare model plots and uncertainty intervals.
+5. Build an ensemble forecast.
+6. Download hub-ready forecast outputs.
+
+## Data Upload and Settings
+
+The **Data Upload & Settings** tab is the starting point for every forecast. Uploaded data must include:
+
+| Column | Description |
+|---|---|
+| `date` | Epidemiological week date |
+| `target_group` | Population subgroup, location, or reporting stratum |
+| `value` | Observed count, rate, admissions, or other target measure |
+
+Shared settings apply across models:
+
+- **Forecast Date:** the reference date for the forecast.
+- **Data to Drop:** recent weeks to exclude because of reporting delays or expected backfill.
+- **Forecast Horizon:** number of weeks ahead to forecast.
+- **Local Seasonality:** seasonal zone used by models that include seasonal structure.
+- **Forecast Output:** whether to keep all formatted horizons or only non-negative forecast horizons.
+
+## Visualization
+
+MicroHub plots show the recent data used by the model, any recent observations excluded by the data-drop setting, comparable data from the previous year, the forecast median, and prediction intervals. These plots are meant to support model checking, interpretation, and discussion before outputs are downloaded.
+
+## Forecast Models
+
+MicroHub includes several model families so participants can compare simple, transparent references with more flexible statistical models.
+
+| Component | Purpose |
+|---|---|
+| **Regular Baseline** | A conservative reference forecast based on recent observed values and historical week-to-week changes. |
+| **Optimal Baseline** | A baseline that uses recent trailing behavior to better reflect short-term levels. |
+| **Seasonal Baseline** | A baseline that incorporates recurring seasonal patterns. |
+| **Copycat** | A trajectory-matching model that projects forward from historically similar epidemic patterns. |
+| **INFLAenza** | A Bayesian time-series model using R-INLA for calibrated probabilistic forecasts. |
+| **newGBQR** | A gradient-boosted quantile regression model that learns seasonal timing and recent-trend features. |
+| **CalCopycat** | A development model extending Copycat with historical calibration. |
+| **FourCAT** | A development deep learning model using Transformer-style temporal features and pretrained checkpoints. |
+
+## Ensemble Forecasts
+
+After at least two individual models have been run, the **Ensemble** tab can combine selected model outputs into a single forecast. The ensemble uses the median across selected model predictions at each quantile, horizon, and target group. Users can also include an external model forecast if it follows the required template.
+
+## Downloads
+
+The **Download** tab lets users preview and export generated forecasts as a CSV file. Outputs are designed to support hubverse-compatible forecasting workflows. MicroHub can also export generated plots as a multi-page PDF for review, reporting, or discussion.
+
+## Retrospective Forecasts
+
+The **Retrospective** tab supports evaluation-oriented workflows. Users can upload historical data, choose past reference weeks, select models, and run forecasts as if they had been produced in real time. Results are bundled as downloadable files for later inspection or evaluation.
+
+## Workshop Focus
+
+These workshop materials emphasize hands-on use of MicroHub: getting the app running, preparing valid input data, understanding forecast settings, running and comparing models, creating ensemble forecasts, and downloading outputs that can fit into collaborative forecasting workflows.
+

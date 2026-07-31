@@ -1,10 +1,10 @@
 Package: microhubWorkshop
-Title: MicroHub India Workshop Materials
+Title: MicroHub Workshop Materials
 Version: 0.0.0.9000
 Authors@R:
     person("Spencer", "Fox", email = "spencer.fox@nau.edu", role = c("aut", "cre"))
-Description: Website source for a three-day hands-on MicroHub forecasting
-    workshop using Docker Desktop, guided exercises, downloadable datasets,
+Description: Website source for hands-on MicroHub forecasting workshop
+    materials using Docker Desktop, guided exercises, downloadable datasets,
     and hub-ready forecast outputs.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -16,4 +16,3 @@ Suggests:
     pkgdown
 VignetteBuilder: knitr
 URL: https://sjfox.github.io/microhub-workshop/
-

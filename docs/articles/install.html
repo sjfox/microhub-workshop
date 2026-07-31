@@ -30,11 +30,12 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="../articles/overview.html">Overview</a></li>
 <li class="active nav-item"><a class="nav-link" href="../articles/install.html">Install</a></li>
-<li class="nav-item"><a class="nav-link" href="../articles/schedule.html">Schedule</a></li>
 <li class="nav-item"><a class="nav-link" href="../articles/exercises.html">Exercises</a></li>
 <li class="nav-item"><a class="nav-link" href="../articles/downloads.html">Downloads</a></li>
 <li class="nav-item"><a class="nav-link" href="../articles/troubleshooting.html">Help</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/contact.html">Contact</a></li>
       </ul>
 <ul class="navbar-nav"></ul>
 </div>
@@ -61,67 +62,237 @@
 <div class="section level2">
 <h2 id="install-microhub-with-docker-desktop">Install MicroHub with Docker Desktop<a class="anchor" aria-label="anchor" href="#install-microhub-with-docker-desktop"></a>
 </h2>
-<p>Docker keeps the R, Python, INLA, and model dependencies inside one
-container so participants can run the dashboard without configuring
-those tools directly.</p>
+<p>Docker allows you to run MicroHub inside an isolated container image
+on your computer with the application’s needed dependencies already
+included. In plain language, Docker Desktop is the program that starts
+and manages MicroHub on your laptop. You do not need to install R,
+Python, or modeling packages separately.</p>
+<p>Docker Desktop is free to use for this workshop.</p>
+<div class="section level3">
+<h3 id="what-you-will-do">What You Will Do<a class="anchor" aria-label="anchor" href="#what-you-will-do"></a>
+</h3>
+<p>There are four main steps:</p>
+<ol style="list-style-type: decimal">
+<li>Install Docker Desktop.</li>
+<li>Open Docker Desktop and check that it works.</li>
+<li>Download the MicroHub image inside Docker Desktop.</li>
+<li>Start MicroHub and open it in your web browser.</li>
+</ol>
+<p>The word <strong>image</strong> means the downloaded MicroHub
+software package. The word <strong>container</strong> means a running
+copy of that image.</p>
+</div>
 <div class="section level3">
 <h3 id="computer-requirements">Computer Requirements<a class="anchor" aria-label="anchor" href="#computer-requirements"></a>
 </h3>
 <ul>
-<li>Docker Desktop installed and running.</li>
+<li>Docker Desktop installed.</li>
+<li>The MicroHub Docker image downloaded in Docker Desktop.</li>
 <li>At least 8 GB memory available; 16 GB or more is recommended for
 smoother model runs.</li>
-<li>Permission to install software and run containers.</li>
+<li>At least 10 GB of free disk space.</li>
 <li>A current web browser such as Chrome, Edge, Firefox, or Safari.</li>
 </ul>
 </div>
 <div class="section level3">
-<h3 id="install-docker-desktop">Install Docker Desktop<a class="anchor" aria-label="anchor" href="#install-docker-desktop"></a>
+<h3 id="download-docker-desktop">Download Docker Desktop<a class="anchor" aria-label="anchor" href="#download-docker-desktop"></a>
 </h3>
-<ol style="list-style-type: decimal">
-<li>Download Docker Desktop from <a href="https://www.docker.com/products/docker-desktop/" class="external-link uri">https://www.docker.com/products/docker-desktop/</a>.</li>
-<li>Install Docker Desktop using the default options.</li>
-<li>Open Docker Desktop and wait until it says Docker is running.</li>
-<li>On Windows, accept any WSL 2 prompts and restart if Docker asks you
-to.</li>
-</ol>
+<p>Download Docker Desktop for your operating system, then follow the
+setup steps below. If you are not sure whether your Mac has an Intel
+chip or an Apple chip, click the Apple menu in the upper-left corner of
+your screen and choose <strong>About This Mac</strong>.</p>
+<ul>
+<li><a href="https://www.docker.com/products/docker-desktop/" class="external-link">Docker
+Desktop download page</a></li>
+<li><a href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=dd-smartbutton&amp;utm_location=header" class="external-link">Windows
+installer</a></li>
+<li><a href="https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=dd-smartbutton&amp;utm_location=module" class="external-link">Mac
+with Intel chip</a></li>
+<li><a href="https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=dd-smartbutton&amp;utm_location=module" class="external-link">Mac
+with Apple chip</a></li>
+<li><a href="https://docs.docker.com/desktop/linux/install/" class="external-link">Linux
+installation instructions</a></li>
+</ul>
 </div>
 <div class="section level3">
-<h3 id="download-the-microhub-image">Download the MicroHub Image<a class="anchor" aria-label="anchor" href="#download-the-microhub-image"></a>
+<h3 id="install-docker-desktop-on-windows">Install Docker Desktop on Windows<a class="anchor" aria-label="anchor" href="#install-docker-desktop-on-windows"></a>
 </h3>
-<p>The MicroHub image is hosted on GitHub Container Registry. Use
-Terminal on macOS/Linux or PowerShell on Windows.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> pull ghcr.io/sjfox/microhub:latest</span></code></pre></div>
-<div class="microhub-callout">
-<p>If the image is also published to Docker Hub before the workshop,
-participants can search for it directly in Docker Desktop. Until then,
-the command above is the most reliable route.</p>
+<div class="section level4">
+<h4 id="check-for-wsl-2">Check for WSL 2<a class="anchor" aria-label="anchor" href="#check-for-wsl-2"></a>
+</h4>
+<p>Before setting up Docker Desktop on a Windows computer, check whether
+Windows Subsystem for Linux 2 (WSL 2) is already installed. WSL 2 lets
+Docker run Linux-based software on Windows.</p>
+<p>Type <code>WSL</code> in the Windows search bar and look for the WSL
+application.</p>
+<div class="float">
+<img src="../screenshots/docker-instructions-01.png" alt="Windows search result for WSL"><div class="figcaption">Windows search result for WSL</div>
+</div>
+<p>If WSL 2 is installed, continue to <a href="#run-the-docker-desktop-installer">Run the Docker Desktop
+Installer</a>. If WSL 2 is not installed, install it before running the
+Docker Desktop installer.</p>
+<ol style="list-style-type: decimal">
+<li>Search for PowerShell in the Windows search bar.</li>
+<li>Open PowerShell as an administrator.</li>
+</ol>
+<div class="float">
+<img src="../screenshots/docker-instructions-02.png" alt="Windows search result for PowerShell run as administrator"><div class="figcaption">Windows search result for PowerShell run as
+administrator</div>
+</div>
+<p>In PowerShell, run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">--install</span></span></code></pre></div>
+<p>To run the command, type or paste it into PowerShell and press
+<strong>Enter</strong>.</p>
+<p>Restart your computer when prompted.</p>
+</div>
+<div class="section level4">
+<h4 id="run-the-docker-desktop-installer">Run the Docker Desktop Installer<a class="anchor" aria-label="anchor" href="#run-the-docker-desktop-installer"></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>Open the <code>Docker Desktop Installer.exe</code> file.</li>
+<li>On the configuration screen, make sure <strong>Use WSL 2 instead of
+Hyper-V</strong> is checked. This is the default and recommended
+option.</li>
+</ol>
+<div class="float">
+<img src="../screenshots/docker-instructions-03.png" alt="Docker Desktop Windows configuration screen with WSL 2 selected"><div class="figcaption">Docker Desktop Windows configuration screen with
+WSL 2 selected</div>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Click <strong>OK</strong> to start the Docker Desktop
+installation.</li>
+<li>When the installation is finished, click <strong>Close and
+restart</strong> if prompted.</li>
+</ol>
+</div>
+</div>
+<div class="section level3">
+<h3 id="install-docker-desktop-on-mac">Install Docker Desktop on Mac<a class="anchor" aria-label="anchor" href="#install-docker-desktop-on-mac"></a>
+</h3>
+<p>Open the Docker Desktop installer for your Mac. During setup, use the
+default settings that allow Docker Desktop to automatically configure
+the necessary settings. If macOS asks whether Docker Desktop can make
+changes to your computer, approve the prompt.</p>
+<div class="float">
+<img src="../screenshots/docker-instructions-04.png" alt="Docker Desktop setup screen on macOS with recommended settings selected"><div class="figcaption">Docker Desktop setup screen on macOS with
+recommended settings selected</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="launch-docker-desktop-and-finish-setup">Launch Docker Desktop and Finish Setup<a class="anchor" aria-label="anchor" href="#launch-docker-desktop-and-finish-setup"></a>
+</h3>
+<p>Open Docker Desktop. The first time you open it, accept the Docker
+Subscription Service Agreement. Docker Desktop can take a minute or two
+to start. Wait until Docker Desktop shows that it is running before
+moving to the next step.</p>
+<p>You may create a free personal Docker account, but an account is not
+required for the workshop.</p>
+</div>
+<div class="section level3">
+<h3 id="verify-the-installation">Verify the Installation<a class="anchor" aria-label="anchor" href="#verify-the-installation"></a>
+</h3>
+<p>This step checks that Docker Desktop can start a small test
+container.</p>
+<p>Open PowerShell on Windows, or Terminal on macOS/Linux.</p>
+<ul>
+<li>On Windows, search for <strong>PowerShell</strong> from the Start
+menu.</li>
+<li>On macOS, open <strong>Terminal</strong> from Applications,
+Launchpad, or Spotlight search.</li>
+</ul>
+<p>Run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div>
+<p>If Docker is working, you should see a message similar to:</p>
+<pre class="text"><code>Hello from Docker! This message shows that your installation appears to be working correctly.</code></pre>
+<p>In Docker Desktop, the <strong>Images</strong> tab should also show
+an image named <code>hello-world</code>.</p>
+<p>If you see an error, make sure Docker Desktop is open and running,
+then try the command again.</p>
+</div>
+<div class="section level3">
+<h3 id="pull-the-microhub-image-in-docker-desktop">Pull the MicroHub Image in Docker Desktop<a class="anchor" aria-label="anchor" href="#pull-the-microhub-image-in-docker-desktop"></a>
+</h3>
+<p>In the search bar at the top of Docker Desktop, type
+<code>cdcgov/microhub</code>. When the image appears, check that the tag
+is set to <code>latest</code>, then click <strong>Pull</strong>.</p>
+<div class="float">
+<img src="../screenshots/docker-instructions-05.png" alt="Docker Desktop search results for cdcgov/microhub with Pull button"><div class="figcaption">Docker Desktop search results for
+cdcgov/microhub with Pull button</div>
+</div>
+<p>The MicroHub image is large, so pulling it can take several minutes
+and may take around 15 minutes on slower connections. This is normal.
+Leave Docker Desktop open until the download finishes.</p>
+<p>When Docker finishes downloading the image, you should see it under
+the <strong>Images</strong> tab with the name <code>microhub</code>.</p>
+<div class="float">
+<img src="../screenshots/docker-instructions-06.png" alt="Docker Desktop Images tab showing cdcgov/microhub"><div class="figcaption">Docker Desktop Images tab showing
+cdcgov/microhub</div>
 </div>
 </div>
 <div class="section level3">
 <h3 id="run-microhub">Run MicroHub<a class="anchor" aria-label="anchor" href="#run-microhub"></a>
 </h3>
+<p>These steps start MicroHub on your computer.</p>
 <ol style="list-style-type: decimal">
-<li>Open Docker Desktop and select <strong>Images</strong>.</li>
-<li>Find <code>ghcr.io/sjfox/microhub</code> and click
+<li>In Docker Desktop, go to the <strong>Images</strong> tab.</li>
+<li>Find the <code>cdcgov/microhub</code> image and click
 <strong>Run</strong>.</li>
 <li>Open <strong>Optional settings</strong>.</li>
-<li>Set <strong>Host port</strong> to <code>3838</code> and
-<strong>Container port</strong> to <code>3838</code>.</li>
-<li>Click <strong>Run</strong>, then open <a href="http://localhost:3838" class="external-link uri">http://localhost:3838</a>.</li>
+<li>Set <strong>Container name</strong> to <code>microhub</code>.</li>
+<li>Set <strong>Host port</strong> to <code>3838</code>. If Docker
+Desktop also shows a <strong>Container port</strong> field, set it to
+<code>3838</code> as well.</li>
+<li>Click <strong>Run</strong>.</li>
 </ol>
+<div class="float">
+<img src="../screenshots/docker-instructions-07.png" alt="Docker Desktop optional settings for running the MicroHub container"><div class="figcaption">Docker Desktop optional settings for running the
+MicroHub container</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="open-microhub">Open MicroHub<a class="anchor" aria-label="anchor" href="#open-microhub"></a>
+</h3>
+<p>In Docker Desktop, open MicroHub by clicking the blue
+<code>3838:3838</code> link in the <strong>Port(s)</strong> column. The
+container should have a green running indicator.</p>
+<div class="float">
+<img src="../screenshots/docker-instructions-08.png" alt="Docker Desktop container list with MicroHub running and port link visible"><div class="figcaption">Docker Desktop container list with MicroHub
+running and port link visible</div>
+</div>
+<p>This opens MicroHub in your default web browser. You can also open <a href="http://localhost:3838" class="external-link">http://localhost:3838</a> directly. You may
+bookmark this page in your browser.</p>
+<p>Once the MicroHub container is running in Docker Desktop, you can use
+the app in your browser without being connected to the internet.</p>
+</div>
+<div class="section level3">
+<h3 id="stop-and-restart-microhub">Stop and Restart MicroHub<a class="anchor" aria-label="anchor" href="#stop-and-restart-microhub"></a>
+</h3>
+<p>When you are done using MicroHub, go to the
+<strong>Containers</strong> tab in Docker Desktop and click the stop
+button for the <code>microhub</code> container.</p>
+<p>To start MicroHub again later, open Docker Desktop, go to
+<strong>Containers</strong>, and start the <code>microhub</code>
+container. If the container is not listed, return to the
+<strong>Images</strong> tab and run the <code>cdcgov/microhub</code>
+image again.</p>
 </div>
 <div class="section level3">
 <h3 id="setup-check">Setup Check<a class="anchor" aria-label="anchor" href="#setup-check"></a>
 </h3>
-<p>Before Day 1 begins, confirm that the MicroHub home page opens in the
-browser and that you can reach the <strong>Data Upload &amp;
-Settings</strong> tab. Download <a href="../downloads/microhub-template.csv">microhub-template.csv</a> and
+<p>Confirm that:</p>
+<ul>
+<li>Docker Desktop is open.</li>
+<li>The <code>cdcgov/microhub</code> image appears in the
+<strong>Images</strong> tab.</li>
+<li>The <code>microhub</code> container appears in the
+<strong>Containers</strong> tab and is running.</li>
+<li>The MicroHub home page opens in the browser.</li>
+<li>You can reach the <strong>Data Upload &amp; Settings</strong> tab in
+MicroHub.</li>
+</ul>
+<p>Download <a href="../downloads/microhub-template.csv">microhub-template.csv</a> and
 keep it with your workshop files.</p>
-<p>
-<a class="microhub-button" href="exercises.html">Go to exercises</a>
-<a class="microhub-button secondary" href="troubleshooting.html">Troubleshooting</a>
-</p>
+<p><a href="exercises.html">Go to exercises</a><br><a href="troubleshooting.html">Troubleshooting</a></p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

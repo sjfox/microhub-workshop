@@ -13,32 +13,49 @@ Most setup problems come from Docker not running, the image not being downloaded
 
 ## Docker Desktop Is Not Running
 
-Open Docker Desktop and wait for the status indicator to show that Docker is running. On Windows, Docker may ask to finish WSL 2 setup or restart the computer.
+Open Docker Desktop and wait for the status indicator to show that Docker is running. This can take a minute or two.
+
+On Windows, Docker may ask to finish WSL 2 setup or restart the computer. Complete those prompts before trying to run MicroHub.
 
 ## MicroHub Image Cannot Be Found
 
-Docker Desktop search may not find GitHub Container Registry images. Pull the image manually first:
+In Docker Desktop, go to the **Images** tab and search for `cdcgov/microhub`.
+
+If you do not see it:
+
+1. Check that you typed the name exactly as `cdcgov/microhub`.
+2. Make sure the **Images** search is looking at remote images, not only local images already on your computer.
+3. Search again and select the `latest` tag.
+4. Click **Pull** and wait for the download to finish.
+
+If a facilitator asks you to use the command line instead, open PowerShell on Windows or Terminal on macOS/Linux and run:
 
 ```bash
-docker pull ghcr.io/sjfox/microhub:latest
+docker pull cdcgov/microhub:latest
 ```
 
 After the pull finishes, return to Docker Desktop and check the **Images** tab.
 
 ## Port 3838 Is Already in Use
 
-Stop any other running MicroHub or Shiny containers in Docker Desktop. Then start MicroHub again with host port `3838` and container port `3838`.
+This means another app or container is already using the same browser address that MicroHub wants to use.
 
-<div class="microhub-callout">
-If a different host port is required, use that number in the browser URL. For example, host port `3839` means opening `http://localhost:3839`.
-</div>
+In Docker Desktop, go to the **Containers** tab and stop any other running MicroHub or Shiny containers. Then start MicroHub again with host port `3838` and container port `3838`.
+
+> If a different host port is required, use that number in the browser URL. For example, host port `3839` means opening `http://localhost:3839`.
 
 ## The Browser Says the App Cannot Be Reached
 
 1. Confirm the MicroHub container is running in Docker Desktop.
 2. Confirm the host and container ports are both set to `3838`.
-3. Open <http://localhost:3838>, not a public website URL.
+3. Open [http://localhost:3838](http://localhost:3838), not a public website URL.
 4. If the container stopped, open its logs in Docker Desktop and share the first visible error with a facilitator.
+
+If the page still does not open, stop the `microhub` container in Docker Desktop, start it again, and refresh the browser page.
+
+## Docker Desktop Asks You to Sign In
+
+A Docker account is not required for the workshop. If Docker Desktop shows a sign-in screen, look for an option to continue without signing in, skip sign-in, or use Docker Desktop without an account.
 
 ## CSV Upload Fails
 
@@ -53,4 +70,3 @@ Check that the file has exactly the required columns and no extra header rows ab
 ## A Model Run Is Slow
 
 Some models take longer than the baselines, especially on laptops with limited memory or CPU. During workshop exercises, start with baseline models and Copycat before running heavier models. Close unused applications if the computer is under memory pressure.
-

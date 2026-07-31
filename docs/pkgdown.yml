@@ -2,12 +2,13 @@ pandoc: 3.6.3
 pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
+  contact: contact.html
   downloads: downloads.html
   exercises: exercises.html
   install: install.html
-  schedule: schedule.html
+  overview: overview.html
   troubleshooting: troubleshooting.html
-last_built: 2026-07-30T17:36Z
+last_built: 2026-07-31T13:12Z
 urls:
   reference: https://sjfox.github.io/microhub-workshop/reference
   article: https://sjfox.github.io/microhub-workshop/articles

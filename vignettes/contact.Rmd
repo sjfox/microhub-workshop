@@ -1,0 +1,18 @@
+---
+title: "Contact"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Contact}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Contact
+
+For questions about MicroHub or these workshop materials, please contact:
+
+**Spencer J. Fox**  
+School of Informatics, Computing, and Cyber Systems  
+Northern Arizona University  
+[spencer.fox@nau.edu](mailto:spencer.fox@nau.edu)
+

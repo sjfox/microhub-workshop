@@ -9,47 +9,165 @@ vignette: >
 
 # Install MicroHub with Docker Desktop
 
-Docker keeps the R, Python, INLA, and model dependencies inside one container so participants can run the dashboard without configuring those tools directly.
+Docker allows you to run MicroHub inside an isolated container image on your computer with the application's needed dependencies already included. In plain language, Docker Desktop is the program that starts and manages MicroHub on your laptop. You do not need to install R, Python, or modeling packages separately.
+
+Docker Desktop is free to use for this workshop.
+
+## What You Will Do
+
+There are four main steps:
+
+1. Install Docker Desktop.
+2. Open Docker Desktop and check that it works.
+3. Download the MicroHub image inside Docker Desktop.
+4. Start MicroHub and open it in your web browser.
+
+The word **image** means the downloaded MicroHub software package. The word **container** means a running copy of that image.
 
 ## Computer Requirements
 
-- Docker Desktop installed and running.
+- Docker Desktop installed.
+- The MicroHub Docker image downloaded in Docker Desktop.
 - At least 8 GB memory available; 16 GB or more is recommended for smoother model runs.
-- Permission to install software and run containers.
+- At least 10 GB of free disk space.
 - A current web browser such as Chrome, Edge, Firefox, or Safari.
 
-## Install Docker Desktop
+## Download Docker Desktop
 
-1. Download Docker Desktop from <https://www.docker.com/products/docker-desktop/>.
-2. Install Docker Desktop using the default options.
-3. Open Docker Desktop and wait until it says Docker is running.
-4. On Windows, accept any WSL 2 prompts and restart if Docker asks you to.
+Download Docker Desktop for your operating system, then follow the setup steps below. If you are not sure whether your Mac has an Intel chip or an Apple chip, click the Apple menu in the upper-left corner of your screen and choose **About This Mac**.
 
-## Download the MicroHub Image
+- [Docker Desktop download page](https://www.docker.com/products/docker-desktop/)
+- [Windows installer](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=header)
+- [Mac with Intel chip](https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module)
+- [Mac with Apple chip](https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module)
+- [Linux installation instructions](https://docs.docker.com/desktop/linux/install/)
 
-The MicroHub image is hosted on GitHub Container Registry. Use Terminal on macOS/Linux or PowerShell on Windows.
+## Install Docker Desktop on Windows
+
+### Check for WSL 2
+
+Before setting up Docker Desktop on a Windows computer, check whether Windows Subsystem for Linux 2 (WSL 2) is already installed. WSL 2 lets Docker run Linux-based software on Windows.
+
+Type `WSL` in the Windows search bar and look for the WSL application.
+
+![Windows search result for WSL](../screenshots/docker-instructions-01.png)
+
+If WSL 2 is installed, continue to [Run the Docker Desktop Installer](#run-the-docker-desktop-installer). If WSL 2 is not installed, install it before running the Docker Desktop installer.
+
+1. Search for PowerShell in the Windows search bar.
+2. Open PowerShell as an administrator.
+
+![Windows search result for PowerShell run as administrator](../screenshots/docker-instructions-02.png)
+
+In PowerShell, run:
 
 ```bash
-docker pull ghcr.io/sjfox/microhub:latest
+wsl --install
 ```
 
-<div class="microhub-callout">
-If the image is also published to Docker Hub before the workshop, participants can search for it directly in Docker Desktop. Until then, the command above is the most reliable route.
-</div>
+To run the command, type or paste it into PowerShell and press **Enter**.
+
+Restart your computer when prompted.
+
+### Run the Docker Desktop Installer
+
+1. Open the `Docker Desktop Installer.exe` file.
+2. On the configuration screen, make sure **Use WSL 2 instead of Hyper-V** is checked. This is the default and recommended option.
+
+![Docker Desktop Windows configuration screen with WSL 2 selected](../screenshots/docker-instructions-03.png)
+
+3. Click **OK** to start the Docker Desktop installation.
+4. When the installation is finished, click **Close and restart** if prompted.
+
+## Install Docker Desktop on Mac
+
+Open the Docker Desktop installer for your Mac. During setup, use the default settings that allow Docker Desktop to automatically configure the necessary settings. If macOS asks whether Docker Desktop can make changes to your computer, approve the prompt.
+
+![Docker Desktop setup screen on macOS with recommended settings selected](../screenshots/docker-instructions-04.png)
+
+## Launch Docker Desktop and Finish Setup
+
+Open Docker Desktop. The first time you open it, accept the Docker Subscription Service Agreement. Docker Desktop can take a minute or two to start. Wait until Docker Desktop shows that it is running before moving to the next step.
+
+You may create a free personal Docker account, but an account is not required for the workshop.
+
+## Verify the Installation
+
+This step checks that Docker Desktop can start a small test container.
+
+Open PowerShell on Windows, or Terminal on macOS/Linux.
+
+- On Windows, search for **PowerShell** from the Start menu.
+- On macOS, open **Terminal** from Applications, Launchpad, or Spotlight search.
+
+Run:
+
+```bash
+docker run hello-world
+```
+
+If Docker is working, you should see a message similar to:
+
+```text
+Hello from Docker! This message shows that your installation appears to be working correctly.
+```
+
+In Docker Desktop, the **Images** tab should also show an image named `hello-world`.
+
+If you see an error, make sure Docker Desktop is open and running, then try the command again.
+
+## Pull the MicroHub Image in Docker Desktop
+
+In the search bar at the top of Docker Desktop, type `cdcgov/microhub`. When the image appears, check that the tag is set to `latest`, then click **Pull**.
+
+![Docker Desktop search results for cdcgov/microhub with Pull button](../screenshots/docker-instructions-05.png)
+
+The MicroHub image is large, so pulling it can take several minutes and may take around 15 minutes on slower connections. This is normal. Leave Docker Desktop open until the download finishes.
+
+When Docker finishes downloading the image, you should see it under the **Images** tab with the name `microhub`.
+
+![Docker Desktop Images tab showing cdcgov/microhub](../screenshots/docker-instructions-06.png)
 
 ## Run MicroHub
 
-1. Open Docker Desktop and select **Images**.
-2. Find `ghcr.io/sjfox/microhub` and click **Run**.
+These steps start MicroHub on your computer.
+
+1. In Docker Desktop, go to the **Images** tab.
+2. Find the `cdcgov/microhub` image and click **Run**.
 3. Open **Optional settings**.
-4. Set **Host port** to `3838` and **Container port** to `3838`.
-5. Click **Run**, then open <http://localhost:3838>.
+4. Set **Container name** to `microhub`.
+5. Set **Host port** to `3838`. If Docker Desktop also shows a **Container port** field, set it to `3838` as well.
+6. Click **Run**.
+
+![Docker Desktop optional settings for running the MicroHub container](../screenshots/docker-instructions-07.png)
+
+## Open MicroHub
+
+In Docker Desktop, open MicroHub by clicking the blue `3838:3838` link in the **Port(s)** column. The container should have a green running indicator.
+
+![Docker Desktop container list with MicroHub running and port link visible](../screenshots/docker-instructions-08.png)
+
+This opens MicroHub in your default web browser. You can also open [http://localhost:3838](http://localhost:3838) directly. You may bookmark this page in your browser.
+
+Once the MicroHub container is running in Docker Desktop, you can use the app in your browser without being connected to the internet.
+
+## Stop and Restart MicroHub
+
+When you are done using MicroHub, go to the **Containers** tab in Docker Desktop and click the stop button for the `microhub` container.
+
+To start MicroHub again later, open Docker Desktop, go to **Containers**, and start the `microhub` container. If the container is not listed, return to the **Images** tab and run the `cdcgov/microhub` image again.
 
 ## Setup Check
 
-Before Day 1 begins, confirm that the MicroHub home page opens in the browser and that you can reach the **Data Upload & Settings** tab. Download [microhub-template.csv](../downloads/microhub-template.csv) and keep it with your workshop files.
+Confirm that:
 
-<p>
-<a class="microhub-button" href="exercises.html">Go to exercises</a>
-<a class="microhub-button secondary" href="troubleshooting.html">Troubleshooting</a>
-</p>
+- Docker Desktop is open.
+- The `cdcgov/microhub` image appears in the **Images** tab.
+- The `microhub` container appears in the **Containers** tab and is running.
+- The MicroHub home page opens in the browser.
+- You can reach the **Data Upload & Settings** tab in MicroHub.
+
+Download [microhub-template.csv](../downloads/microhub-template.csv) and keep it with your workshop files.
+
+[Go to exercises](exercises.html)  
+[Troubleshooting](troubleshooting.html)

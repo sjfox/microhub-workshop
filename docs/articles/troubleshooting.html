@@ -30,11 +30,12 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="../articles/overview.html">Overview</a></li>
 <li class="nav-item"><a class="nav-link" href="../articles/install.html">Install</a></li>
-<li class="nav-item"><a class="nav-link" href="../articles/schedule.html">Schedule</a></li>
 <li class="nav-item"><a class="nav-link" href="../articles/exercises.html">Exercises</a></li>
 <li class="nav-item"><a class="nav-link" href="../articles/downloads.html">Downloads</a></li>
 <li class="active nav-item"><a class="nav-link" href="../articles/troubleshooting.html">Help</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/contact.html">Contact</a></li>
       </ul>
 <ul class="navbar-nav"></ul>
 </div>
@@ -68,29 +69,45 @@ container.</p>
 <h3 id="docker-desktop-is-not-running">Docker Desktop Is Not Running<a class="anchor" aria-label="anchor" href="#docker-desktop-is-not-running"></a>
 </h3>
 <p>Open Docker Desktop and wait for the status indicator to show that
-Docker is running. On Windows, Docker may ask to finish WSL 2 setup or
-restart the computer.</p>
+Docker is running. This can take a minute or two.</p>
+<p>On Windows, Docker may ask to finish WSL 2 setup or restart the
+computer. Complete those prompts before trying to run MicroHub.</p>
 </div>
 <div class="section level3">
 <h3 id="microhub-image-cannot-be-found">MicroHub Image Cannot Be Found<a class="anchor" aria-label="anchor" href="#microhub-image-cannot-be-found"></a>
 </h3>
-<p>Docker Desktop search may not find GitHub Container Registry images.
-Pull the image manually first:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> pull ghcr.io/sjfox/microhub:latest</span></code></pre></div>
+<p>In Docker Desktop, go to the <strong>Images</strong> tab and search
+for <code>cdcgov/microhub</code>.</p>
+<p>If you do not see it:</p>
+<ol style="list-style-type: decimal">
+<li>Check that you typed the name exactly as
+<code>cdcgov/microhub</code>.</li>
+<li>Make sure the <strong>Images</strong> search is looking at remote
+images, not only local images already on your computer.</li>
+<li>Search again and select the <code>latest</code> tag.</li>
+<li>Click <strong>Pull</strong> and wait for the download to
+finish.</li>
+</ol>
+<p>If a facilitator asks you to use the command line instead, open
+PowerShell on Windows or Terminal on macOS/Linux and run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">docker</span> pull cdcgov/microhub:latest</span></code></pre></div>
 <p>After the pull finishes, return to Docker Desktop and check the
 <strong>Images</strong> tab.</p>
 </div>
 <div class="section level3">
 <h3 id="port-3838-is-already-in-use">Port 3838 Is Already in Use<a class="anchor" aria-label="anchor" href="#port-3838-is-already-in-use"></a>
 </h3>
-<p>Stop any other running MicroHub or Shiny containers in Docker
-Desktop. Then start MicroHub again with host port <code>3838</code> and
-container port <code>3838</code>.</p>
-<div class="microhub-callout">
+<p>This means another app or container is already using the same browser
+address that MicroHub wants to use.</p>
+<p>In Docker Desktop, go to the <strong>Containers</strong> tab and stop
+any other running MicroHub or Shiny containers. Then start MicroHub
+again with host port <code>3838</code> and container port
+<code>3838</code>.</p>
+<blockquote>
 <p>If a different host port is required, use that number in the browser
 URL. For example, host port <code>3839</code> means opening
 <code>http://localhost:3839</code>.</p>
-</div>
+</blockquote>
 </div>
 <div class="section level3">
 <h3 id="the-browser-says-the-app-cannot-be-reached">The Browser Says the App Cannot Be Reached<a class="anchor" aria-label="anchor" href="#the-browser-says-the-app-cannot-be-reached"></a>
@@ -99,10 +116,21 @@ URL. For example, host port <code>3839</code> means opening
 <li>Confirm the MicroHub container is running in Docker Desktop.</li>
 <li>Confirm the host and container ports are both set to
 <code>3838</code>.</li>
-<li>Open <a href="http://localhost:3838" class="external-link uri">http://localhost:3838</a>, not a public website URL.</li>
+<li>Open <a href="http://localhost:3838" class="external-link">http://localhost:3838</a>, not
+a public website URL.</li>
 <li>If the container stopped, open its logs in Docker Desktop and share
 the first visible error with a facilitator.</li>
 </ol>
+<p>If the page still does not open, stop the <code>microhub</code>
+container in Docker Desktop, start it again, and refresh the browser
+page.</p>
+</div>
+<div class="section level3">
+<h3 id="docker-desktop-asks-you-to-sign-in">Docker Desktop Asks You to Sign In<a class="anchor" aria-label="anchor" href="#docker-desktop-asks-you-to-sign-in"></a>
+</h3>
+<p>A Docker account is not required for the workshop. If Docker Desktop
+shows a sign-in screen, look for an option to continue without signing
+in, skip sign-in, or use Docker Desktop without an account.</p>
 </div>
 <div class="section level3">
 <h3 id="csv-upload-fails">CSV Upload Fails<a class="anchor" aria-label="anchor" href="#csv-upload-fails"></a>
