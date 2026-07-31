@@ -26,8 +26,6 @@ The word **image** means the downloaded MicroHub software package. The word **co
 
 ## Computer Requirements
 
-- Docker Desktop installed.
-- The MicroHub Docker image downloaded in Docker Desktop.
 - At least 8 GB memory available; 16 GB or more is recommended for smoother model runs.
 - At least 10 GB of free disk space.
 - A current web browser such as Chrome, Edge, Firefox, or Safari.
@@ -139,13 +137,9 @@ These steps start MicroHub on your computer.
 5. Set **Host port** to `3838`. If Docker Desktop also shows a **Container port** field, set it to `3838` as well.
 6. Click **Run**.
 
-![Docker Desktop optional settings for running the MicroHub container](../screenshots/docker-instructions-07.png)
-
 ## Open MicroHub
 
 In Docker Desktop, open MicroHub by clicking the blue `3838:3838` link in the **Port(s)** column. The container should have a green running indicator.
-
-![Docker Desktop container list with MicroHub running and port link visible](../screenshots/docker-instructions-08.png)
 
 This opens MicroHub in your default web browser. You can also open [http://localhost:3838](http://localhost:3838) directly. You may bookmark this page in your browser.
 
