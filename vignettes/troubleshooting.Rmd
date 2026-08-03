@@ -25,13 +25,13 @@ If you do not see it:
 
 1. Check that you typed the name exactly as `cdcgov/microhub`.
 2. Make sure the **Images** search is looking at remote images, not only local images already on your computer.
-3. Search again and select the `latest` tag.
+3. Search again and select the `v2.0.0` tag.
 4. Click **Pull** and wait for the download to finish.
 
 If a facilitator asks you to use the command line instead, open PowerShell on Windows or Terminal on macOS/Linux and run:
 
 ```bash
-docker pull cdcgov/microhub:latest
+docker pull cdcgov/microhub:v2.0.0
 ```
 
 After the pull finishes, return to Docker Desktop and check the **Images** tab.

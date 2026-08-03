@@ -116,7 +116,7 @@ If you see an error, make sure Docker Desktop is open and running, then try the 
 
 ## Pull the MicroHub Image in Docker Desktop
 
-In the search bar at the top of Docker Desktop, type `cdcgov/microhub`. When the image appears, check that the tag is set to `latest`, then click **Pull**.
+In the search bar at the top of Docker Desktop, type `cdcgov/microhub`. When the image appears, check that the tag is set to `v2.0.0`, then click **Pull**.
 
 ![Docker Desktop search results for cdcgov/microhub with Pull button](../screenshots/docker-instructions-05.png)
 
