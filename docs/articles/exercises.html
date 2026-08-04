@@ -60,111 +60,28 @@
     
     
 <div class="section level2">
-<h2 id="four-guided-microhub-exercises">Four Guided MicroHub Exercises<a class="anchor" aria-label="anchor" href="#four-guided-microhub-exercises"></a>
+<h2 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h2>
-<p>Each exercise is designed for small-group work with a short
-facilitator debrief. Participants should keep screenshots, notes, and
-downloaded CSV outputs as they go.</p>
+<p>Exercise materials will be added here soon.</p>
 <div class="section level3">
-<h3 id="exercise-1-upload-surveillance-data-and-read-the-plot">Exercise 1: Upload Surveillance Data and Read the Plot<a class="anchor" aria-label="anchor" href="#exercise-1-upload-surveillance-data-and-read-the-plot"></a>
+<h3 id="exercise-1">Exercise 1<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
 </h3>
-<p><strong>Goal:</strong> Load a MicroHub-compatible CSV and decide
-whether the most recent data are ready for real-time forecasting.</p>
-<p><strong>Data:</strong> <a href="../downloads/bangladesh-preferred.csv">bangladesh-preferred.csv</a></p>
-<ol style="list-style-type: decimal">
-<li>Open MicroHub at <a href="http://localhost:3838" class="external-link">http://localhost:3838</a>.</li>
-<li>Go to <strong>Data Upload &amp; Settings</strong> and upload
-<code>bangladesh-preferred.csv</code>.</li>
-<li>Confirm the app recognizes the required columns: <code>date</code>,
-<code>target_group</code>, and <code>value</code>.</li>
-<li>Set the forecast date to the most recent available week in the
-dataset.</li>
-<li>Inspect the visualization for missing weeks, unusual spikes, and the
-apparent seasonal pattern.</li>
-</ol>
-<blockquote>
-<p><strong>Deliverable:</strong> Write down one reason you would use all
-recent data and one reason you might drop the most recent week.</p>
-</blockquote>
+<p>Placeholder.</p>
 </div>
 <div class="section level3">
-<h3 id="exercise-2-run-baseline-forecasts">Exercise 2: Run Baseline Forecasts<a class="anchor" aria-label="anchor" href="#exercise-2-run-baseline-forecasts"></a>
+<h3 id="exercise-2">Exercise 2<a class="anchor" aria-label="anchor" href="#exercise-2"></a>
 </h3>
-<p><strong>Goal:</strong> Establish a simple reference forecast before
-using more complex models.</p>
-<p><strong>Data:</strong> Continue with <a href="../downloads/bangladesh-preferred.csv">bangladesh-preferred.csv</a>.</p>
-<ol style="list-style-type: decimal">
-<li>In <strong>Data Upload &amp; Settings</strong>, set forecast horizon
-to 4 weeks.</li>
-<li>Run the <strong>Regular Baseline</strong> model and save the
-plot.</li>
-<li>Run the <strong>Optimal Baseline</strong> model and compare the
-median forecast path.</li>
-<li>Run the <strong>Seasonal Baseline</strong> model if the dataset has
-enough seasonal history.</li>
-<li>Record which baseline seems most plausible for the current epidemic
-phase.</li>
-</ol>
-<blockquote>
-<p><strong>Key idea:</strong> Baseline models are transparent anchors
-for evaluating whether a complex model is adding useful information.</p>
-</blockquote>
+<p>Placeholder.</p>
 </div>
 <div class="section level3">
-<h3 id="exercise-3-compare-copycat-and-inflaenza">Exercise 3: Compare Copycat and INFLAenza<a class="anchor" aria-label="anchor" href="#exercise-3-compare-copycat-and-inflaenza"></a>
+<h3 id="exercise-3">Exercise 3<a class="anchor" aria-label="anchor" href="#exercise-3"></a>
 </h3>
-<p><strong>Goal:</strong> Compare a historical trajectory-matching model
-with a Bayesian time-series model.</p>
-<p><strong>Data:</strong> Use <a href="../downloads/chile-target.csv">chile-target.csv</a> for a second
-scenario.</p>
-<ol style="list-style-type: decimal">
-<li>Upload <code>chile-target.csv</code> and keep a 4-week forecast
-horizon.</li>
-<li>Run <strong>Copycat</strong>. Note whether the forecast follows
-recent growth, decline, or a flatter path.</li>
-<li>Run <strong>INFLAenza</strong>. Compare the forecast median and
-uncertainty intervals to Copycat.</li>
-<li>Change <strong>Data to Drop</strong> from 0 to 1 and rerun one
-model.</li>
-<li>Discuss how reporting delays can change model interpretation in real
-time.</li>
-</ol>
-<div class="float">
-<img src="../reference/figures/forecast-plot.png" alt="Example MicroHub forecast plot with uncertainty intervals"><div class="figcaption">Example MicroHub forecast plot with uncertainty
-intervals</div>
-</div>
+<p>Placeholder.</p>
 </div>
 <div class="section level3">
-<h3 id="exercise-4-build-an-ensemble-and-export-hub-ready-results">Exercise 4: Build an Ensemble and Export Hub-Ready Results<a class="anchor" aria-label="anchor" href="#exercise-4-build-an-ensemble-and-export-hub-ready-results"></a>
+<h3 id="exercise-4">Exercise 4<a class="anchor" aria-label="anchor" href="#exercise-4"></a>
 </h3>
-<p><strong>Goal:</strong> Combine forecasts, inspect the output format,
-and prepare a file that could move into a forecasting hub workflow.</p>
-<ol style="list-style-type: decimal">
-<li>Make sure at least two individual model forecasts have been
-generated.</li>
-<li>Open the <strong>Ensemble</strong> tab.</li>
-<li>Select the models to include and run the ensemble.</li>
-<li>Open the <strong>Download</strong> tab and preview the forecast
-table.</li>
-<li>Download the combined CSV and compare it to <a href="../downloads/example-forecast-output.csv">example-forecast-output.csv</a>.</li>
-</ol>
-<blockquote>
-<p><strong>Deliverable:</strong> Identify the columns needed by the hub
-submission format and one check you would run before sharing the
-file.</p>
-</blockquote>
-</div>
-<div class="section level3">
-<h3 id="debrief-prompts">Debrief Prompts<a class="anchor" aria-label="anchor" href="#debrief-prompts"></a>
-</h3>
-<ul>
-<li>Which model was easiest to explain to a surveillance team?</li>
-<li>Which assumptions felt most important for local use?</li>
-<li>How should forecast date and data-drop settings be chosen during
-routine reporting?</li>
-<li>What local metadata, target groups, or reporting cadence would need
-to be added before operational use?</li>
-</ul>
+<p>Placeholder.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

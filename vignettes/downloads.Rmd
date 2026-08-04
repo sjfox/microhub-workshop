@@ -7,23 +7,18 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-# Datasets and Templates
+# Downloads
 
-Download these files before the hands-on sessions. Keep them in one local folder so they are easy to upload into MicroHub.
+Workshop datasets, templates, and example outputs will be added here soon.
 
-| File | Use | Description |
-|---|---|---|
-| [microhub-template.csv](../downloads/microhub-template.csv) | Template | Minimal CSV structure with `date`, `target_group`, and `value` columns. |
-| [bangladesh-preferred.csv](../downloads/bangladesh-preferred.csv) | Exercises 1-2 | Example surveillance time series for upload, visualization, and baseline model exercises. |
-| [chile-target.csv](../downloads/chile-target.csv) | Exercise 3 | Second example dataset for comparing Copycat and INFLAenza model behavior. |
-| [example-forecast-output.csv](../downloads/example-forecast-output.csv) | Exercise 4 | Reference output for comparing participant downloads to a hub-ready forecast table. |
+## Data Files
 
-## Data Format
+Placeholder.
 
-| Column | Type | Description |
-|---|---|---|
-| `date` | Date | Epidemiological week date. The template uses month/day/year; example datasets use ISO dates. |
-| `target_group` | Text | Population subgroup, location, or reporting stratum such as Overall, Adult, or Pediatric. |
-| `value` | Number | Observed count, rate, admissions, or other target measure for that week. |
+## Templates
 
-Use the same three-column format when preparing local surveillance data.
+Placeholder.
+
+## Example Outputs
+
+Placeholder.

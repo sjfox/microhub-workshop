@@ -161,7 +161,7 @@ Confirm that:
 - The MicroHub home page opens in the browser.
 - You can reach the **Data Upload & Settings** tab in MicroHub.
 
-Download [microhub-template.csv](../downloads/microhub-template.csv) and keep it with your workshop files.
+Download any workshop datasets from the [Downloads](downloads.html) page and keep them with your workshop files.
 
 [Go to exercises](exercises.html)  
 [Troubleshooting](troubleshooting.html)
