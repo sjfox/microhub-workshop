@@ -7,18 +7,6 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-# Downloads
+# Hub Setup Activity
 
-Workshop datasets, templates, and example outputs will be added here soon.
-
-## Data Files
-
-Placeholder.
-
-## Templates
-
-Placeholder.
-
-## Example Outputs
-
-Placeholder.
+1. [hub-setup-files.zip](../downloads/hub-setup-files.zip): compressed archive with the Hubverse time-series data, four previous forecast output files, the Quarto weekly report, and the GitHub Actions workflow configuration.

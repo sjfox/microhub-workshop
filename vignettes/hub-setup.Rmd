@@ -1,0 +1,62 @@
+---
+title: "Hub Setup"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Hosting a Forecasting hub with GitHub}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+# Hosting a Forecasting hub with GitHub
+
+A forecasting hub is a centralized data portal that supports weekly
+forecasting activities. In this workshop, we use the [Hubverse
+ecosystem](https://hubverse.io/) to build a forecasting hub that lives
+in GitHub. The hub stores and archives both training data and forecast
+outputs, and it supports weekly forecast report generation from those
+files.
+
+Our goal here is to set up a hub for a single person running the
+forecasting workflow. Because it is built within the **Hubverse
+ecosystem**, however, the same hub can be extended into a collaborative,
+multi-team hub and paired with a dashboard, all with minimal changes to
+what you build today.
+
+# Prerequisites
+
+We will create a forecasting hub during the workshop. Please complete
+the following steps before the workshop.
+
+## 1. Create or open your GitHub account
+
+Follow these [instructions to create a GitHub
+account](https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github).
+A free account is all you need.
+
+![Creating a GitHub account](../screenshots/hub-setup-01.png)
+
+## 2. Install GitHub Desktop
+
+GitHub Desktop is a graphical application for interacting with Git and
+GitHub. It simplifies version control tasks, making it easier to manage
+repositories and track changes without using the command line.
+
+First, [download GitHub Desktop](https://desktop.github.com/download/).
+Once it is installed on your machine, open the application and sign in
+with the GitHub account you created in Step 1.
+
+![The screen you will see when GitHub Desktop first
+opens](../screenshots/hub-setup-02.png)
+
+Next, authorize GitHub Desktop to access your GitHub account.
+
+![The authorization page in your
+browser](../screenshots/hub-setup-03.png)
+
+## 3. Download the hub setup files
+
+Download [hub-setup-files.zip](../downloads/hub-setup-files.zip) from the [Downloads](downloads.html) page.
+
+The ZIP contains the Hubverse time-series data, four previous forecast output files, the Quarto weekly report, and the GitHub Actions workflow configuration.
+
+After downloading, unzip the archive and keep the extracted files together in one folder. On Windows, right-click the ZIP file and choose **Extract All**; on macOS, double-click the ZIP file.

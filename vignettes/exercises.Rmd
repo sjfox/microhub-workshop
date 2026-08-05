@@ -1,13 +1,13 @@
 ---
-title: "Exercises"
+title: "MicroHub Exercises"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Exercises}
+  %\VignetteIndexEntry{MicroHub Exercises}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-# Exercises
+# MicroHub Exercises
 
 Exercise materials will be added here soon.
 
