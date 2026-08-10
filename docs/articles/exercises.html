@@ -63,11 +63,72 @@
 <div class="section level2">
 <h2 id="microhub-exercises">MicroHub Exercises<a class="anchor" aria-label="anchor" href="#microhub-exercises"></a>
 </h2>
-<p>Exercise materials will be added here soon.</p>
+<p>Use these exercises to practice moving from a public health
+forecasting question to a MicroHub forecast output.</p>
 <div class="section level3">
-<h3 id="exercise-1">Exercise 1<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
+<h3 id="exercise-1-influenza-hospitalization-forecasts">Exercise 1: Influenza Hospitalization Forecasts<a class="anchor" aria-label="anchor" href="#exercise-1-influenza-hospitalization-forecasts"></a>
 </h3>
-<p>Placeholder.</p>
+<div class="section level4">
+<h4 id="scenario">Scenario<a class="anchor" aria-label="anchor" href="#scenario"></a>
+</h4>
+<p>It is January 7, 2026. Influenza-related hospital admissions are a
+major contributor to the overall burden of influenza in the United
+States. Accurate forecasts can help public health teams plan staffing,
+communications, and interventions during the 2025-2026 respiratory virus
+season, as COVID-19, RSV, and other respiratory pathogens continue to
+circulate.</p>
+<p>The CDC Influenza Division has asked you to produce short-term
+influenza hospitalization forecasts for the week ending January 10, 2026.
+You have weekly data from February 2022 through January 3, 2026 for five
+states: Delaware, Florida, Georgia, Maryland, and North Carolina.</p>
+</div>
+<div class="section level4">
+<h4 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
+</h4>
+<p>Download <a href="../downloads/exercise-1-flu-hospitalizations.csv">exercise-1-flu-hospitalizations.csv</a>
+from the <a href="downloads.html">Downloads</a> page.</p>
+<p>The file includes:</p>
+<ul>
+<li><code>date</code>: week-ending date</li>
+<li><code>target_group</code>: state</li>
+<li><code>population</code>: state population</li>
+<li><code>value</code>: influenza-related hospital admissions</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="your-task">Your Task<a class="anchor" aria-label="anchor" href="#your-task"></a>
+</h4>
+<p>Using MicroHub, produce four-week influenza hospitalization forecasts
+for the five states, beginning with the week ending January 10,
+2026.</p>
+<ol style="list-style-type: decimal">
+<li>Open MicroHub and upload
+<code>exercise-1-flu-hospitalizations.csv</code>.</li>
+<li>Confirm that MicroHub recognizes <code>date</code>,
+<code>target_group</code>, <code>population</code>, and
+<code>value</code> correctly.</li>
+<li>Set the forecast date to January 7, 2026.</li>
+<li>Set the forecast horizon to 4 weeks.</li>
+<li>Select the United States as the country for seasonality.</li>
+<li>Run all available forecasting models.</li>
+<li>Compare the model plots for the five states.</li>
+<li>Create an ensemble forecast from the models you trust most.</li>
+<li>Download the forecast output, report, and visualization plots.</li>
+</ol>
+</div>
+<div class="section level4">
+<h4 id="prompts">Prompts<a class="anchor" aria-label="anchor" href="#prompts"></a>
+</h4>
+<ul>
+<li>Which states show the clearest increase in recent hospital
+admissions?</li>
+<li>Which model appears to respond most strongly to the recent
+trend?</li>
+<li>Where do the models disagree the most?</li>
+<li>Which forecasts would you feel most comfortable sharing with a
+public health planning team, and why?</li>
+</ul>
+</div>
 </div>
 <div class="section level3">
 <h3 id="exercise-2">Exercise 2<a class="anchor" aria-label="anchor" href="#exercise-2"></a>

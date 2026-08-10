@@ -9,11 +9,47 @@ vignette: >
 
 # MicroHub Exercises
 
-Exercise materials will be added here soon.
+Use these exercises to practice moving from a public health forecasting question to a MicroHub forecast output.
 
-## Exercise 1
+## Exercise 1: Influenza Hospitalization Forecasts
 
-Placeholder.
+### Scenario
+
+It is January 7, 2026. Influenza-related hospital admissions are a major contributor to the overall burden of influenza in the United States. Accurate forecasts can help public health teams plan staffing, communications, and interventions during the 2025-2026 respiratory virus season, as COVID-19, RSV, and other respiratory pathogens continue to circulate.
+
+The CDC Influenza Division has asked you to produce short-term influenza hospitalization forecasts for the week ending January 10, 2026. You have weekly data from February 2022 through January 3, 2026 for five states: Delaware, Florida, Georgia, Maryland, and North Carolina.
+
+### Data
+
+Download [exercise-1-flu-hospitalizations.csv](../downloads/exercise-1-flu-hospitalizations.csv) from the [Downloads](downloads.html) page.
+
+The file includes:
+
+- `date`: week-ending date
+- `target_group`: state
+- `population`: state population
+- `value`: influenza-related hospital admissions
+
+### Your Task
+
+Using MicroHub, produce four-week influenza hospitalization forecasts for the five states, beginning with the week ending January 10, 2026.
+
+1. Open MicroHub and upload `exercise-1-flu-hospitalizations.csv`.
+2. Confirm that MicroHub recognizes `date`, `target_group`, `population`, and `value` correctly.
+3. Set the forecast date to January 7, 2026.
+4. Set the forecast horizon to 4 weeks.
+5. Select the United States as the country for seasonality.
+6. Run all available forecasting models.
+7. Compare the model plots for the five states.
+8. Create an ensemble forecast from the models you trust most.
+9. Download the forecast output, report, and visualization plots.
+
+### Prompts
+
+- Which states show the clearest increase in recent hospital admissions?
+- Which model appears to respond most strongly to the recent trend?
+- Where do the models disagree the most?
+- Which forecasts would you feel most comfortable sharing with a public health planning team, and why?
 
 ## Exercise 2
 
