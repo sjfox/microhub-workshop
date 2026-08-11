@@ -13,9 +13,8 @@ vignette: >
 
 # Exercise 1 Data
 
-1. [exercise-1-flu-hospitalizations.csv](../downloads/exercise-1-flu-hospitalizations.csv): historical influenza hospitalization data for five states used in Exercise 1.
+1. [exercise-1-flu-hospitalizations.zip](../downloads/exercise-1-flu-hospitalizations.zip): zipped CSV with historical influenza hospitalization data for five states used in Exercise 1.
 
 # Exercise 2 Data
 
-1. [exercise-2-2025-12-15.csv](../downloads/exercise-2-2025-12-15.csv): target data for three groups used to explore recent reporting anomalies, data-drop choices, and model sensitivity in Exercise 2.
-1. [exercise-2-2024-02-01.csv](../downloads/exercise-2-2024-02-01.csv): target data for three groups used to compare forecast behavior at a different point in the outbreak season in Exercise 2.
+1. [exercise-2-data.zip](../downloads/exercise-2-data.zip): zipped CSVs with target data for three groups used to explore recent reporting anomalies, compare forecast behavior at different points in the outbreak season, and evaluate model sensitivity in Exercise 2.

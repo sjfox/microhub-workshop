@@ -21,7 +21,7 @@ The CDC Influenza Division has asked you to produce short-term influenza hospita
 
 ### Data
 
-Download [exercise-1-flu-hospitalizations.csv](../downloads/exercise-1-flu-hospitalizations.csv) from the [Downloads](downloads.html) page.
+Download <a href="../downloads/exercise-1-flu-hospitalizations.zip">exercise-1-flu-hospitalizations.zip</a> from the [Downloads](downloads.html) page and unzip it before uploading the CSV to MicroHub.
 
 The file includes:
 
@@ -61,10 +61,12 @@ Cases appear to be increasing in line with expectations for this time of year. I
 
 ### Data
 
-Download both Exercise 2 files from the [Downloads](downloads.html) page:
+Download [exercise-2-data.zip](../downloads/exercise-2-data.zip) from the [Downloads](downloads.html) page and unzip it before uploading the CSVs to MicroHub.
 
-- [exercise-2-2025-12-15.csv](../downloads/exercise-2-2025-12-15.csv)
-- [exercise-2-2024-02-01.csv](../downloads/exercise-2-2024-02-01.csv)
+The ZIP includes:
+
+- `exercise-2-2025-12-15.csv`
+- `exercise-2-2024-02-01.csv`
 
 Each file includes:
 
