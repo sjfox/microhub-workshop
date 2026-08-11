@@ -60,3 +60,7 @@ Download [hub-setup-files.zip](../downloads/hub-setup-files.zip) from the [Downl
 The ZIP contains the Hubverse time-series data, four previous forecast output files, the Quarto weekly report, and the GitHub Actions workflow configuration.
 
 After downloading, unzip the archive and keep the extracted files together in one folder. On Windows, right-click the ZIP file and choose **Extract All**; on macOS, double-click the ZIP file.
+
+## 4. Create a hub using a Hubverse template
+
+Use [this link](https://github.com/hubverse-org/hubTemplate) and click the **Use this template** button.
