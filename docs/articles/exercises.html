@@ -131,19 +131,75 @@ public health planning team, and why?</li>
 </div>
 </div>
 <div class="section level3">
-<h3 id="exercise-2">Exercise 2<a class="anchor" aria-label="anchor" href="#exercise-2"></a>
+<h3 id="exercise-2-forecasting-with-recent-reporting-anomalies">Exercise 2: Forecasting with Recent Reporting Anomalies<a class="anchor" aria-label="anchor" href="#exercise-2-forecasting-with-recent-reporting-anomalies"></a>
 </h3>
-<p>Placeholder.</p>
+<div class="section level4">
+<h4 id="scenario-1">Scenario<a class="anchor" aria-label="anchor" href="#scenario-1"></a>
+</h4>
+<p>You have weekly target data for three groups, labeled A, B, and C.
+These groups may represent states, age groups, or another set of
+populations that a public health team is monitoring.</p>
+<p>Cases appear to be increasing in line with expectations for this time
+of year. In the most recent few weeks, however, the reported counts
+appear lower than expected. This may reflect true decreases, delayed
+reporting, incomplete data, or another recent anomaly. Your goal is to
+decide how much recent data to exclude before producing forecasts and to
+compare how sensitive the models are to that choice.</p>
 </div>
-<div class="section level3">
-<h3 id="exercise-3">Exercise 3<a class="anchor" aria-label="anchor" href="#exercise-3"></a>
-</h3>
-<p>Placeholder.</p>
+<div class="section level4">
+<h4 id="data-1">Data<a class="anchor" aria-label="anchor" href="#data-1"></a>
+</h4>
+<p>Download both Exercise 2 files from the <a href="downloads.html">Downloads</a> page:</p>
+<ul>
+<li><a href="../downloads/exercise-2-2025-12-15.csv">exercise-2-2025-12-15.csv</a></li>
+<li><a href="../downloads/exercise-2-2024-02-01.csv">exercise-2-2024-02-01.csv</a></li>
+</ul>
+<p>Each file includes:</p>
+<ul>
+<li><code>date</code>: week-ending date</li>
+<li><code>target_group</code>: group label</li>
+<li><code>population</code>: group population</li>
+<li><code>value</code>: reported cases</li>
+</ul>
 </div>
-<div class="section level3">
-<h3 id="exercise-4">Exercise 4<a class="anchor" aria-label="anchor" href="#exercise-4"></a>
-</h3>
-<p>Placeholder.</p>
+<div class="section level4">
+<h4 id="your-task-1">Your Task<a class="anchor" aria-label="anchor" href="#your-task-1"></a>
+</h4>
+<p>Start with <code>exercise-2-2025-12-15.csv</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Open MicroHub, upload the file, and explore the visualizations for
+all three target groups.</li>
+<li>Confirm the forecast date and select the seasonal zone that best
+matches the data.</li>
+<li>Try several data-drop settings within your group. Decide how many
+recent weeks to drop before forecasting.</li>
+<li>Run each individual forecast model using the default
+parameterization.</li>
+<li>Change selected model parameters and compare how the forecasts
+respond.</li>
+</ol>
+<p>Then repeat the same workflow with
+<code>exercise-2-2024-02-01.csv</code>. As you work, consider what part
+of the outbreak season the dataset represents and how that timing might
+affect forecast behavior and reliability.</p>
+</div>
+<div class="section level4">
+<h4 id="prompts-1">Prompts<a class="anchor" aria-label="anchor" href="#prompts-1"></a>
+</h4>
+<ul>
+<li>For each dataset, how many weeks of data did you drop, and why?</li>
+<li>How did the forecasts change when you changed the number of dropped
+weeks?</li>
+<li>Did some models respond more strongly than others when you dropped
+additional weeks?</li>
+<li>What did you observe when varying model parameters?</li>
+<li>Did some parameters have more impact on model predictions than
+others?</li>
+<li>How did the timing of the
+<code>exercise-2-2024-02-01.csv</code> dataset affect your confidence in
+the forecasts?</li>
+</ul>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

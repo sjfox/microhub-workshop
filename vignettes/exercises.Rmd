@@ -51,14 +51,45 @@ Using MicroHub, produce four-week influenza hospitalization forecasts for the fi
 - Where do the models disagree the most?
 - Which forecasts would you feel most comfortable sharing with a public health planning team, and why?
 
-## Exercise 2
+## Exercise 2: Forecasting with Recent Reporting Anomalies
 
-Placeholder.
+### Scenario
 
-## Exercise 3
+You have weekly target data for three groups, labeled A, B, and C. These groups may represent states, age groups, or another set of populations that a public health team is monitoring.
 
-Placeholder.
+Cases appear to be increasing in line with expectations for this time of year. In the most recent few weeks, however, the reported counts appear lower than expected. This may reflect true decreases, delayed reporting, incomplete data, or another recent anomaly. Your goal is to decide how much recent data to exclude before producing forecasts and to compare how sensitive the models are to that choice.
 
-## Exercise 4
+### Data
 
-Placeholder.
+Download both Exercise 2 files from the [Downloads](downloads.html) page:
+
+- [exercise-2-2025-12-15.csv](../downloads/exercise-2-2025-12-15.csv)
+- [exercise-2-2024-02-01.csv](../downloads/exercise-2-2024-02-01.csv)
+
+Each file includes:
+
+- `date`: week-ending date
+- `target_group`: group label
+- `population`: group population
+- `value`: reported cases
+
+### Your Task
+
+Start with `exercise-2-2025-12-15.csv`.
+
+1. Open MicroHub, upload the file, and explore the visualizations for all three target groups.
+2. Confirm the forecast date and select the seasonal zone that best matches the data.
+3. Try several data-drop settings within your group. Decide how many recent weeks to drop before forecasting.
+4. Run each individual forecast model using the default parameterization.
+5. Change selected model parameters and compare how the forecasts respond.
+
+Then repeat the same workflow with `exercise-2-2024-02-01.csv`. As you work, consider what part of the outbreak season the dataset represents and how that timing might affect forecast behavior and reliability.
+
+### Prompts
+
+- For each dataset, how many weeks of data did you drop, and why?
+- How did the forecasts change when you changed the number of dropped weeks?
+- Did some models respond more strongly than others when you dropped additional weeks?
+- What did you observe when varying model parameters?
+- Did some parameters have more impact on model predictions than others?
+- How did the timing of the `exercise-2-2024-02-01.csv` dataset affect your confidence in the forecasts?
