@@ -33,7 +33,7 @@ Follow these [instructions to create a GitHub
 account](https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github).
 A free account is all you need.
 
-![Creating a GitHub account](../screenshots/hub-setup-01.png)
+![](../screenshots/hub-setup-01.png)
 
 ## 2. Install GitHub Desktop
 
@@ -45,8 +45,7 @@ First, [download GitHub Desktop](https://desktop.github.com/download/).
 Once it is installed on your machine, open the application and sign in
 with the GitHub account you created in Step 1.
 
-![The screen you will see when GitHub Desktop first
-opens](../screenshots/hub-setup-02.png)
+![](../screenshots/hub-setup-02.png)
 
 Next, authorize GitHub Desktop to access your GitHub account.
 
@@ -55,12 +54,234 @@ browser](../screenshots/hub-setup-03.png)
 
 ## 3. Download the hub setup files
 
-Download [hub-setup-files.zip](../downloads/hub-setup-files.zip) from the [Downloads](downloads.html) page.
+Download [hub-setup-files.zip](../downloads/hub-setup-files.zip) from the 
+[Downloads](downloads.html) page.
 
-The ZIP contains the Hubverse time-series data, previous forecast output files, the Quarto weekly report, and the GitHub Actions workflow configuration.
+The ZIP contains the Hubverse time-series data, previous forecast output files, 
+the Quarto weekly report, and the GitHub Actions workflow configuration.
 
-After downloading, unzip the archive and keep the extracted files together in one folder. On Windows, right-click the ZIP file and choose **Extract All**; on macOS, double-click the ZIP file.
+After downloading, unzip the archive and keep the extracted files together in one 
+folder. On Windows, right-click the ZIP file and choose **Extract All**; on macOS, double-click the ZIP file.
 
-## 4. Create a hub using a Hubverse template
+# Create a hub within GitHub
 
-Use [this link](https://github.com/hubverse-org/hubTemplate) and click the **Use this template** button.
+## 1. Create a hub using a Hubverse template
+
+Use [this link](https://github.com/hubverse-org/hubTemplate) and click the 
+**Use this template** button.
+
+![](../screenshots/hub-setup-04.png)
+
+You'll be taken to a page where you'll enter a **Repository name**. 
+This will be the name of your You'll also see the option to make the repository public or private. 
+If the data you're forecasting is sensitive, choose private 
+(we'll use private for this workshop). Then click the **Create repository**. 
+
+![](../screenshots/hub-setup-05.png)
+
+## 2. Move remote hub to local machine
+
+Right now, your hub exists remotely on GitHub. To work with it, you'll connect 
+it to your local machine by **cloning** it, which creates a local copy that stays 
+linked to the remote version. 
+You only need to do this once. Click the green **Code** button, then select 
+**Open with GitHub Desktop**.
+
+![](../screenshots/hub-setup-06.png)
+
+Your browser will ask whether you want to open GitHub Desktop. 
+Click **Open GitHubDesktop.exe** 
+
+![](../screenshots/hub-setup-07.png)
+
+GitHub Desktop will launch and show a message. Under **Local path**, 
+you'll see where the hub will be saved on your machine. Then click **Clone**. 
+
+![](../screenshots/hub-setup-08.png)
+
+If you navigate to that file path, you'll see the same folders and files that 
+are in the remote hub, now on your local machine. If you have trouble finding 
+where the hub was cloned to, go back to GitHub Desktop, click **Repository** in 
+the top menu bar, and select **Show
+in Explorer** (Windows) or **Show in Finder** (Mac).
+
+![](../screenshots/hub-setup-09.png)
+
+## 3. Initial folder setup 
+
+Next, set up the following folders. 
+
+> **Warning:** Double-check that your folder names don't have typos.
+All folder names should be lowercase.
+
+> **Note:** You'll use the files you extracted from
+`hub-setup-files.zip` in the Prerequisites section above.
+
+### Create a `target-data` folder
+
+This folder holds the data you'll use for forecasting.
+
+### Create a `src` folder
+
+This folder holds programming files, such as R scripts or `.qmd`
+files, that you'll run as part of the workflow. Move the
+`forecasting-weeklyreport.qmd` file from `hub-setup-files.zip` into
+the `src` folder.
+
+### Create a `.github` folder and `workflows` subfolder inside `.github` folder
+
+This folder holds the configuration file that tells GitHub which files
+to run. Move the `weeklyreport_run.yaml` file from
+`hub-setup-files.zip` into the `workflows` folder.
+
+**Mac users:** Finder may not let you create a folder that starts with
+a period (`.`). If that happens:
+
+1. Open **Terminal** (press `Cmd + Spacebar`, type "Terminal," and
+press Enter).
+2. Type `mkdir -p /path/to/your/hub/.github/workflows` and press
+Enter. For example: `mkdir -p /Users/epuser/Documents/MyHub/.github/workflows`.
+3. The `.github` folder may be hidden once it's created. To unhide it:
+go to your cloned hub folder in Finder, right-click the `.github`
+folder, choose **Get Info**, and uncheck **Hidden** in the panel that
+opens.
+
+### Create a `microhub` folder inside `model-output`
+
+The `model-output` folder is where
+weekly forecast outputs go. Since these forecasts come from the
+MicroHub tool, create a `microhub` subfolder and place all
+MicroHub-generated forecast files there.
+
+For this exercise, assume forecasts have already been generated for
+the past six weeks, as if you had been running and submitting them
+weekly. Add the following files to the `microhub` folder:
+
+ - `microhub-output_2026-05-16.csv`
+ - `microhub-output_2026-05-23.csv`
+ - `microhub-output_2026-05-30.csv`
+ - `microhub-output_2026-06-06.csv`
+ - `microhub-output_2026-06-13.csv`
+ - `microhub-output_2026-06-20.csv`
+
+### Sync local hub with remote hub
+
+Now that the initial setup is complete, sync your local machine with
+the remote hub so both are up to date. We'll use GitHub Desktop:
+
+1. Go back to GitHub Desktop and click **Fetch** at the top to
+refresh.
+2. Enter a commit message describing your changes — for example,
+`initial set up`.
+3. Click **Commit to main**. This saves all the changes you made,
+similar to saving a file.
+4. In the same spot where **Fetch** was, you'll now see **Push**.
+Click it to push your local changes to the remote hub, so both are in
+sync.
+
+![](../screenshots/hub-setup-10.png)
+
+![](../screenshots/hub-setup-11.png)
+
+> **Note:** Unless you plan to extend this hub into a full
+collaborative hub or build a dashboard using the Hubverse ecosystem,
+you don't need to touch the `hub-config` or `model-metadata` folders.
+If you're interested in these features, let us know and we can help
+you set them up.
+
+# Exercise: running through the weekly forecasting workflow 
+
+## 1. Getting the data ready for forecasting 
+
+Typically, data to be forecast is pulled at a set time each week.
+Suppose we're in week 26 of 2026 (June 21–27) and working with SARI
+data from a country in Epidemic Zone E. The data has already been
+pulled from the database and cleaned so it's ready for the MicroHub
+tool — that's the `microhub-target.csv` file from
+`hub-setup-files.zip`.
+
+The other file is `time-series.csv`. It contains the same kind of data
+as `microhub-target.csv`, but with the archived history: each week's
+`microhub-target.csv` gets appended to it once uploaded. Suppose we've
+been archiving data since January 2026, so `time-series.csv` already
+contains 26 weeks of appended data.
+
+Put both files — `microhub-target.csv` and `time-series.csv` — inside
+the `target-data` folder.
+
+## 2. Run the forecast using MicroHub
+
+### Upload data
+
+In MicroHub, choose `microhub-target.csv` from the `target-data`
+folder in your hub. Let's say we typically forecast on Wednesdays.
+Wednesday of week 26 is `2026-06-24`, so select that date for
+**Forecast Date**. Looking at the current year's time series, it's a
+good idea to exclude the two most recent weeks from the model input,
+due to suspected data backfill. For this exercise, choose any
+countries in Zone E, and leave the rest of the settings at their
+defaults. Click **Run All Models**.
+
+![](../screenshots/hub-setup-12.png)
+
+### Run the ensemble
+
+After all individual models have finished running, it's time to run
+the ensemble model. Go to the **Ensemble** tab, select all three
+individual models (INFLAenza, Copycat, and newGBQR), and click **Run
+Ensemble**.
+
+![](../screenshots/hub-setup-13.png)
+
+### Forecast output
+
+Once all the models have finished running, download the forecast
+output from the tool. It will download as
+`microhub-output_2026-06-27.csv`. Move that file into the
+`model-output/microhub` folder in your local hub.
+
+![](../screenshots/hub-setup-14.png)
+
+### Sync with the remote hub 
+
+Once again, sync your local machine with the remote hub so both are
+up to date:
+
+1. Click **Fetch** to refresh.
+2. Enter a commit message describing your changes — for example,
+`2026-06-27 forecasting`.
+3. Click **Commit to main**.
+4. Click **Push** to push your local changes to the remote hub
+
+## 3. Weekly report generation
+
+### Run the GitHub Actions workflow
+
+Go back to your remote hub on GitHub and confirm that the
+`2026-06-27` forecast submission is there. Then click the
+**Actions** tab. In the left panel, select the **Run weekly report**
+workflow, and click **Run workflow**. It will take a few minutes to
+complete. Once it's done, you'll see a green checkmark.
+
+![](../screenshots/hub-setup-15.png)
+
+![](../screenshots/hub-setup-16.png)
+
+![](../screenshots/hub-setup-17.png)
+
+![](../screenshots/hub-setup-18.png)
+
+### Sync back to your local machine
+
+You can confirm the weekly report was generated by checking your
+remote hub. Since it was generated on GitHub, your remote hub has the
+new report, but your local machine doesn't have it yet — so you'll
+need to sync it back:
+
+1. Click **Fetch** to refresh.
+2. In the same spot where **Fetch** was, you'll now see **Pull origin**. Click it to pull the remote hub's changes to your local machine.
+3. Open the weekly report from your local hub folder.
+
+![](../screenshots/hub-setup-19.png)
+
+![](../screenshots/hub-setup-20.png)
