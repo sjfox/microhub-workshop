@@ -11,6 +11,8 @@ vignette: >
 
 1. [hub-setup-files.zip](../downloads/hub-setup-files.zip): compressed archive with the Hubverse time-series data, previous forecast output files, the Quarto weekly report, and the GitHub Actions workflow configuration.
 
+    1. [hub-setup-files-2.zip](../downloads/hub-setup-files-2.zip): date fixed version 
+
 2. [Weekly forecast report example](../downloads/forecasting-weeklyreport.html): example weekly report
 
 # Exercise 1 Data
