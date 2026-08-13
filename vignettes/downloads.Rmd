@@ -11,6 +11,8 @@ vignette: >
 
 1. [hub-setup-files.zip](../downloads/hub-setup-files.zip): compressed archive with the Hubverse time-series data, previous forecast output files, the Quarto weekly report, and the GitHub Actions workflow configuration.
 
+2. [Weekly forecast report example](../downloads/forecasting-weeklyreport.html): example weekly report 
+
 # Exercise 1 Data
 
 1. [exercise-1-flu-hospitalizations.zip](../downloads/exercise-1-flu-hospitalizations.zip): zipped CSV with historical influenza hospitalization data for five states used in Exercise 1.

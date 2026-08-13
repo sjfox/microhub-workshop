@@ -117,6 +117,8 @@ All folder names should be lowercase.
 > **Note:** You'll use the files you extracted from
 `hub-setup-files.zip` in the Prerequisites section above.
 
+![](../screenshots/hub-setup-21.png)
+
 ### Create a `target-data` folder
 
 This folder holds the data you'll use for forecasting.
